@@ -23,5 +23,15 @@ public class Soojebi {
 		SuperObj s = new SubObj();
 		s.show();
 	}
-
 }
+
+
+○ Super 클래스는 부모 클래스이고 메소드로 show와 print를 가진다. show는 print 메소드를 호출하고, print 메서드는 SubObj 클래스의 print 메서드를 호출하고 화면에 "Super"를 출력한다.
+○ SubObj 클래스는 자식 클래스이다. SubObj 클래스는 메서드로 show와 print를 가진다.
+  show 메소드는 super.print를 호출하며 부모 클래스의 print를 호출한다. print 메서드는 화면에 "Sub"를 출력한다.
+○ main 메서드에서는 SuperObj s = new SubObj(); 문장에서 new 연산자를 이용하여 SubObj 클래스의 생성자를 호출하고 객체 s를 생성한다. 
+  SuperObj는 부모 클래스이고 자식 클래스의 생성자를 이용하여 객체를 생성할 수 있다.
+○ s.show를 실행하면 SubObj 클래스의 print 메서드가 호출되고 show 메서드에서 super.print 메서드가 호출 된다.
+  SubObj의 부모 클래스인 SuperObj 클래스의 print 메서드가 호출이 되고 다시 print 메서드가 호출이 되는데 이때 print는 오버라이딩으로 자식 클래스의 print가 호출되어 "Sub"가 호출이 된다. 
+  그리고 화면에 "Super"를 출력한다. 즉, 화면에는 "SubSuper"가 출력된다.
+ 
