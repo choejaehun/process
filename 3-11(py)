@@ -1,0 +1,21 @@
+def soojebi(begin, diff, n):
+ cnt = 1
+ ret = begin
+ while True:
+    cnt += 1
+    ret *= diff
+    if cnt == n:
+        return ret
+print(soojebi(1,3,4))
+
+정답 : 27
+○ soojebe라는 함수를 선언하며 파리미터로 begin, diff, n을 전달받는다.
+○ cnt는 1로 초기화하고 ret는 begin 값으로 초기화한다.
+○ while 문은 True일 때까지 반복을 수행한다. cnt 값을 1증가시키고 ret와 diff를 곱한 결과를 ret에 대입한다. 만약 cnt가 n과 같으면 ret값을 리턴한다.
+○ 사용자 정의함수를 파라미터에 1,3,4로 호출한다.
+
+begin     cnt     diff     ret
+ 1         1        3       1
+ 1         2        3       3
+ 1         3        3       9
+ 1         4        3      27
