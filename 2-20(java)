@@ -1,0 +1,31 @@
+#include <stdio.h>
+void fn(int *c, int *d){
+  int temp = 0;
+  temp = *c;
+  *c = *d;
+  *d = temp;
+}
+void main() {
+  int a = 10;
+  int b = 5;
+  fn(&a, &b);
+  printf("%d %d\n",a ,b);
+}
+
+정답 : 5,10
+○ main 함수에서 정수형 변수 a는 10, b는 5로 초깃값을 대입한다.
+○ fn 함수를 호출한다.
+○ fn 함수에서는 파라미터로 정수형 포인터 타입 c와 d로부터 main 함수의 a, b의 주소값을 전달받는다.
+○ 두 값의 교환을 위해 임시 저장 변수로 정수형 변수 temp를 선언하고 0으로 초기화한다.
+○ *c 값(c가 가리키고 있는 값이므로 main 함수의 a 값)을 temp에 대입하고 *d 값(d가 가리키고 있는 값이므로 main 함수의 b 값)을 *c에 대입하고 temp의 값을 *d에 대입한다.
+○ fn 함수가 호출 후 a 변수와 b 변수의 값은 교환이 유지되며 교환된 값인 5와 10인 화면에 출력된다.
+
+코드              main 함수                 s 함수
+                 a       b            temp    *c    *d
+int a =10;      10
+int b = 5;               5
+fn(&a,&b)                                    a주소   b주소
+int temp=0;                            0
+temp = *c;                             10
+*c = *d;        5
+*d = temp;              10
