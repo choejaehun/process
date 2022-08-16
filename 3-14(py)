@@ -1,0 +1,35 @@
+class Parent {
+	String name ="Parent";
+	public Parent() {
+		System.out.print("P : " + this.name);
+	}
+	public Parent(String name) {
+		this.name = name;
+		System.out.print("P(String) :" +this.name); 
+	}
+}
+class Child extends Parent{
+	int num;
+	public Child(String name, int num) {
+		super(name);
+		this.num = num;
+	}
+	void info() {
+		System.out.print(num);
+	}
+}
+public class Soojebi {
+	public static void main(String[] args) {
+		Child c = new Child("Soojebi", 2021);
+		c.info();
+	}
+}
+
+정답 : P(String) : Soojebi2021
+○ Parent 클래스는 부모 클래스로 2개의 생성자 메서드를 가진다. 파라미터가 없는 생성자와 파라미터가 1개인 생성자이다.
+ 두 생성자 모두 화면에 "P(String)" 와 this.name울 출력한다. 파라미터가 있는 경우 전달받은 name을 출력한다.
+○ Child 클래스의 Child() 생성자에서 super()를 호출하여 부모 클래스인 Parent 클래스의 생성자를 호출한다. this.num에 파라미터로 전달받은 num을 대입한다.
+  info 메서드는 num 값을 화면에 출력한다.
+○ 메인 메서드에서 파라미터로 "Soojebi" 와 2021을 전달하고 객체를 생성한다.
+○ 생성자가 호출되어 화면에는 "P(String): Soojebi"가 출력된다.
+○ c.info가 호출되고 num 값인 2021을 출력한다.
