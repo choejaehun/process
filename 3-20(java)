@@ -1,0 +1,32 @@
+public class Soojebi {
+public static void main(String[] args) {
+	int i=0, sum =0;
+	while (i<10) {
+		i++;
+		if(i%2 == 1)
+			continue;
+		sum += i;
+		}
+	System.out.println(sum);
+	}
+}
+
+정답 : 30
+○ 정수형 변수 i와 sum을 선언과 동시에 0으로 초기화한다.
+○ while 반복문은 i가 10보다 작을 때까지 반복을 수행한다.
+○ i++에서 i 값을 1 증가시킨다.
+○ 만약 i 값을 2로 나눈 나머지가 1인 경우 continue를 수행한다.
+○ sum += i;에서 sum 값과 i 값을 더한 결과를 sum에 대입한다.
+while 반복문이 종료되고 sum 값을 화면에 출력한다.
+
+i     i++     sum     continue
+0      1       0        실행
+1      2       2   
+2      3       2        실행
+3      4       6  
+4      5       6        실행
+5      6      12 
+6      7      12        실행
+7      8      20      
+8      9      20        실행
+9     10      30    
